@@ -65,6 +65,13 @@ form.addEventListener('submit', (e) => {
       container.classList.add('show-records')
       // displayStudentData()
     } else if (input.value && editFlag) {
+      const tdCollection = [...editElement.children]
+      insertToTableRow(tdCollection)
+      showAlert('value changed', 'success')
+      submit.textContent = 'submit'
+      // edit Local Storage
+      editLocalStorage(editId, inputEls[i].value)
+      setBackToDefault()
     } else {
       showAlert('Please, enter value', 'danger')
     }
@@ -144,7 +151,7 @@ const showAlert = (text, action) => {
   }, 1000)
 }
 
-// set to default
+// Set to default
 const setToDefault = () => {
   inputEls.map((input) => {
     input.value = ''
@@ -154,6 +161,7 @@ const setToDefault = () => {
   submit.textContent = 'submit'
 }
 
+// Remove from local storage
 const removeFromLocalStorage = (id) => {
   let items = JSON.parse(localStorage.getItem('studentData'))
   items = items.filter((item) => item.id !== id)
@@ -161,7 +169,19 @@ const removeFromLocalStorage = (id) => {
   student.textContent = `You have ${items.length} students`
 }
 
-// select table row button
+// Edit from Local Storage
+const editLocalStorage = (id, value) => {
+  let items = JSON.parse(localStorage.getItem('studentData'))
+  items = items.map((item) => {
+    if (item.id === id) {
+      item.value = value
+    }
+    return item
+  })
+  localStorage.setItem('studentData', JSON.stringify(items))
+}
+
+// Select table row button
 studentBio.addEventListener('click', (e) => {
   // select delete button
   if (e.target.classList.contains('delete')) {
@@ -183,9 +203,13 @@ studentBio.addEventListener('click', (e) => {
     let editEl = e.target.parentElement
     editEl.addEventListener('click', () => {
       modalOverlay.classList.toggle('open-modal')
-      const element = editEl.parentElement.parentElement
-      const tdCollection = [...element.children]
-      tdCollection.map((td) => {})
+      editElement = editEl.parentElement.parentElement
+      console.log(editElement.id)
+      const tdCollection = [...editElement.children]
+      insertToInputValue(tdCollection)
+      editFlag = true
+      editId = editElement.id
+      submit.textContent = 'edit'
     })
 
     closeBtn.addEventListener('click', () => {
@@ -193,3 +217,22 @@ studentBio.addEventListener('click', (e) => {
     })
   }
 })
+const insertToInputValue = (tdColl) => {
+  inputEls[0].value = tdColl[1].innerHTML
+  inputEls[1].value = tdColl[2].innerHTML
+  inputEls[2].value = tdColl[3].innerHTML
+  inputEls[3].value = tdColl[4].innerHTML
+  inputEls[4].value = tdColl[5].innerHTML
+  inputEls[5].value = tdColl[6].innerHTML
+  inputEls[8].value = tdColl[0].innerHTML
+}
+
+const insertToTableRow = (tdColl) => {
+  tdColl[1].innerHTML = inputEls[0].value
+  tdColl[2].innerHTML = inputEls[1].value
+  tdColl[3].innerHTML = inputEls[2].value
+  tdColl[4].innerHTML = inputEls[3].value
+  tdColl[5].innerHTML = inputEls[4].value
+  tdColl[6].innerHTML = inputEls[5].value
+  tdColl[0].innerHTML = inputEls[8].value
+}
