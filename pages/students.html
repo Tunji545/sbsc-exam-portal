@@ -112,55 +112,54 @@
       </ul>
     </aside>
     <main>
-      <p class="mainAlert"></p>
-      <h3 class="student"></h3>
-      <h2 class="uppercase blk2 pl2 py1">students</h2>
-      <hr class="hor-line" />
-      <div class="flex pl3 space-between">
-        <div class="rect-white pl2 align-center mx">
-          <ul class="flex space-between width">
-            <li>
-              <a href="dashboard.html" class="flex align-center">
-                <img src="../images/dashboard.png" alt="" class="mr" />
-                <p>dashboard</p>
-              </a>
-            </li>
-            <li class="stroke">/</li>
-            <li>
-              <a href="#" class="flex align-center">
-                <img src="../images/chart.png" alt="" class="mr" />
-                <p>schedule</p>
-              </a>
-            </li>
-          </ul>
+      <div class="students-wrapper pb1">
+        <p class="mainAlert"></p>
+        <h3 class="student"></h3>
+        <h2 class="uppercase blk2 pl2">students</h2>
+        <hr class="hor-line" />
+        <div class="flex pl3 space-between">
+          <div class="rect-white space-between pl2 align-center mx py2 pr">
+            <ul class="flex space-between">
+              <li>
+                <a href="dashboard.html" class="flex align-center">
+                  <img src="../images/dashboard.png" alt="" class="mr" />
+                  <p>dashboard</p>
+                </a>
+              </li>
+              <li class="stroke">/</li>
+              <li>
+                <a href="#" class="flex align-center">
+                  <img src="../images/chart.png" alt="" class="mr" />
+                  <p>schedule</p>
+                </a>
+              </li>
+            </ul>
+            <button class="modal-btn flex center">
+              <div class="btn-modal mr">
+                <img src="../images/plus.png" alt="" />
+              </div>
+            </button>
+          </div>
         </div>
-        <div class="rect-blue flex center">
-          <button class="modal-btn flex center">
-            <div class="btn-modal mr">
-              <img src="../images/plus.png" alt="" />
-            </div>
-            <p class="capitalize wh">add&nbsp;student</p>
-          </button>
-        </div>
-      </div>
 
-      <div class="student-records">
-        <p class="students-table pl2 uppercase">Students Table</p>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Years</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Matric</th>
-              <th>Grades</th>
-              <th>Honours</th>
-              <th>Email</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody class="studentBio"></tbody>
-        </table>
+        <div class="student-records pb1">
+          <p class="students-table pl2 uppercase">Students Table</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Years</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Matric</th>
+                <th>Grades</th>
+                <th>Honours</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="studentBio"></tbody>
+          </table>
+        </div>
       </div>
     </main>
     <!-- modal -->

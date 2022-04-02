@@ -49,8 +49,13 @@
         </ul>
       </nav>
     </header>
-    <aside>
+    <aside class="aside d-none-lapi">
       <ul class="pt1 flex column space-between">
+        <li id="close-icon" class="d-none close-icon">
+          <div class="close-btn">
+            <img src="../images/close.png" alt="" />
+          </div>
+        </li>
         <li class="pl1">
           <a href="#" class="active flex align-center">
             <img src="../images/dashboard.png" alt="" class="aside-img" />
@@ -109,9 +114,14 @@
     </aside>
     <main>
       <h3 class="student">You have 2 students</h3>
-      <h2 class="uppercase blk2 pl2 pt2">dashboard</h2>
+      <div class="flex space-between align-center">
+        <h2 class="uppercase blk2 pl2 pt2">dashboard</h2>
+        <div class="hamburger hamburger-btn" id="hamburger">
+          <img src="../images/hamburger.png" alt="" />
+        </div>
+      </div>
       <hr class="hor-line mb1" />
-      <div class="rect-white px align-center">
+      <div class="rect-white px align-center mx">
         <ul class="width">
           <li>
             <a href="#" class="flex align-center">
@@ -122,26 +132,131 @@
         </ul>
       </div>
       <div class="card-wrapper flex space-between align-center">
-        <div class="card uppercase">
-          <h3>total result</h3>
-          <h4 class="pl1">11</h4>
+        <div class="card uppercase flex align-center space-between">
+          <div>
+            <h4 class="pl1 opacity">11</h4>
+            <h3 class="opacity">classes</h3>
+          </div>
+          <div class="card-img opacity">
+            <img src="../images/users-group-bg.png" alt="" />
+          </div>
         </div>
-        <div class="card uppercase">
-          <h3>total exam</h3>
-          <h4 class="pl1">6</h4>
+        <div class="card uppercase flex align-center space-between">
+          <div>
+            <h4 class="pl1 opacity">11</h4>
+            <h3 class="opacity">students</h3>
+          </div>
+          <div class="card-img opacity">
+            <img src="../images/user-bg.png" alt="" />
+          </div>
         </div>
-        <div class="card uppercase">
-          <h3>total student</h3>
-          <h4 class="pl1">61</h4>
+        <div class="card uppercase flex align-center space-between">
+          <div>
+            <h4 class="pl1 opacity">11</h4>
+            <h3 class="opacity">teachers</h3>
+          </div>
+          <div class="card-img opacity">
+            <img src="../images/male-bg.png" alt="" />
+          </div>
         </div>
-        <div class="card uppercase">
-          <h3>total subject</h3>
-          <h4 class="pl1">28</h4>
+        <div class="card uppercase flex align-center space-between">
+          <div>
+            <h4 class="pl1 opacity">11</h4>
+            <h3 class="opacity">new message</h3>
+          </div>
+          <div class="card-img opacity">
+            <img src="../images/message-bg.png" alt="" />
+          </div>
         </div>
-        <div class="card uppercase">
-          <h3>total classes</h3>
-          <h4 class="pl1">6</h4>
+      </div>
+      <div class="flex space-between mt card2-6-wrapper mb2">
+        <div class="col2-6 bg-wh">
+          <div class="card2-6-1 pxy">
+            <div class="flex finger align-center">
+              <div class="mr2">
+                <img src="../images/finger.png" alt="" />
+              </div>
+              <p>Leader Board</p>
+            </div>
+            <div class="flex">
+              <div class="col2">
+                <p class="mt2 opacity">Teachers</p>
+                <div class="mt3 flex">
+                  <div class="mr2">
+                    <img src="../images/user-bl.png" alt="" />
+                  </div>
+                  <div>
+                    <p class="mb2 col2-person">Juanita Stugeon</p>
+                    <p>Smart Worker</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col2">
+                <p class="mt2 opacity">Students</p>
+                <div class="mt3 flex">
+                  <div class="mr2">
+                    <img src="../images/user-bl.png" alt="" />
+                  </div>
+                  <div>
+                    <p class="mb2 col2-person">James Akridges</p>
+                    <p>Dedication to study</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card2-6-2 pxy mt2">
+            <div class="flex finger align-center">
+              <div class="mr2">
+                <img src="../images/circle-left.png" alt="" />
+              </div>
+              <p>News & Events</p>
+            </div>
+            <div class="bg-gry pxy2 br">
+              <div class="flex">
+                <div class="bg-rd pxy br mr2">
+                  <p class="wh">Events</p>
+                </div>
+                <p class="blk1">Sociology Class cancelled</p>
+              </div>
+            </div>
+            <div class="bg-gry pxy2 br mt4">
+              <div class="flex">
+                <div class="bg-rd pxy br mr2">
+                  <p class="wh">Events</p>
+                </div>
+                <p class="blk1">Sociology Class cancelled</p>
+              </div>
+            </div>
+            <div class="bg-gry pxy2 br mt4">
+              <div class="flex">
+                <div class="bg-rd pxy br mr2">
+                  <p class="wh">Events</p>
+                </div>
+                <p class="blk1">Sociology Class cancelled</p>
+              </div>
+            </div>
+          </div>
+          <div class="card2-6-3 pxy mt2">
+            <div class="flex finger align-center">
+              <div class="mr2">
+                <img src="../images/finger.png" alt="" />
+              </div>
+              <p>Quink Links</p>
+            </div>
+            <div class="flex space-between finger wh">
+              <div class="bg-gr col2-1 flex center">
+                <p>News Feed</p>
+              </div>
+              <div class="bg-gr col2-1 flex center">Events</div>
+            </div>
+            <div class="flex space-between mt4 wh">
+              <div class="bg-gr col2-1 flex center">Class Schedule</div>
+              <div class="bg-gr col2-1 flex center">Send mail / SMS</div>
+            </div>
+          </div>
         </div>
+        <div class="col2-4"></div>
       </div>
     </main>
   </body>

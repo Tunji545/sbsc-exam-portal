@@ -8,6 +8,7 @@ const alert = document.querySelector('.alert')
 const mainAlert = document.querySelector('.mainAlert')
 const container = document.querySelector('.student-records')
 const submit = document.querySelector('.submit')
+const studentWrapper = document.querySelector('.students-wrapper')
 
 let editElement
 let editFlag = false
@@ -18,6 +19,7 @@ inputEls = [...inputEls]
 
 modalButton.addEventListener('click', () => {
   modalOverlay.classList.toggle('open-modal')
+  studentWrapper.classList.add('students-height')
 })
 
 closeBtn.addEventListener('click', () => {
@@ -61,9 +63,8 @@ form.addEventListener('submit', (e) => {
       studentData.id = 'qw' + new Date().getTime().toString()
       studentArr = JSON.parse(localStorage.getItem('studentData')) || []
       studentArr.push(studentData)
-      showAlert('Item Added', 'success')
       container.classList.add('show-records')
-      // displayStudentData()
+      showAlert('Item Added', 'success')
     } else if (input.value && editFlag) {
       const tdCollection = [...editElement.children]
       insertToTableRow(tdCollection)
@@ -91,7 +92,7 @@ form.addEventListener('submit', (e) => {
                   <td>${student.gradeScore}</td>
                   <td>${student.honours}</td>
                   <td>${student.email}</td>
-                  <td>
+                  <td class="flex">
                   <button type="button" class="edit-btn"><img src="../images/editBtn.png" class="edit"></button>
                   <button type="button" class="delete-btn"><img src="../images/trash.png" class="delete"></button>
                   </td>
@@ -99,6 +100,7 @@ form.addEventListener('submit', (e) => {
           `
   }
   setToDefault()
+  submit.textContent = 'Register'
 })
 
 // Output
@@ -125,7 +127,7 @@ const displayStudentData = () => {
               <td>${gradeScore}</td>
               <td>${honours}</td>
               <td>${email}</td>
-              <td>
+              <td class="flex">
               <button type="button" class="edit-btn"><img src="../images/editBtn.png" class="edit"></button>
               <button type="button" class="delete-btn"><img src="../images/trash.png" class="delete"></button>
               </td>
@@ -192,6 +194,7 @@ studentBio.addEventListener('click', (e) => {
       studentBio.removeChild(element)
       if (studentBio.children.length === 0) {
         container.classList.remove('show-records')
+        container.style.paddingBottom = '0'
       }
       showAlert('Item removed', 'danger')
       setToDefault()

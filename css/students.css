@@ -66,7 +66,9 @@ a {
   position: rel;
 }
 .fixed {
-  display: fixed;
+  position: fixed;
+  width: 100%;
+  height: 6rem;
 }
 .abs-center {
   position: absolute;
@@ -111,6 +113,7 @@ header {
   background-color: var(--clr-black);
   color: var(--clr-white);
   box-shadow: var(--light-shadow);
+  z-index: 1;
 }
 header:hover {
   box-shadow: var(--dark-white-shadow);
@@ -135,8 +138,19 @@ nav {
   padding-top: 2%;
   padding-bottom: 2%;
 }
+.py2 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
 .pb1 {
   padding-bottom: 2%;
+}
+.pb2 {
+  padding-bottom: 1%;
+}
+
+.pr {
+  padding-right: 2%;
 }
 .mx {
   margin-right: 2%;
@@ -148,7 +162,8 @@ nav {
 .mr2 {
   margin-right: 2%;
 }
-ul {
+header ul,
+main ul {
   width: 25rem;
 }
 .arr-down {
@@ -172,20 +187,20 @@ aside ul {
 }
 aside li {
   width: 100%;
-  padding: 0.8rem 0;
+  padding: 1rem 0;
 }
 aside li:active {
   background-color: teal;
 }
 aside li:hover {
   background-color: teal;
-  margin-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 aside li a {
   color: #888;
 }
 aside li a:first-child {
-  padding-right: 0.8rem;
+  /* padding-right: 0.8rem; */
   width: 3.6rem;
 }
 .aside-img {
@@ -194,17 +209,27 @@ aside li a:first-child {
 main {
   width: 80%;
   margin-left: 20%;
-  background-color: #f9f9f4;
-  min-height: calc(100vh - 6rem);
+  background-color: #fff;
+  min-height: calc(100vh);
 }
 .main-alert {
   padding-left: 2.5%;
   padding-right: 2.5%;
 }
+.students-wrapper {
+  background-color: #efeeff;
+  height: 17rem;
+  position: relative;
+  top: 5rem;
+  z-index: 0;
+}
+.students-height {
+  height: auto;
+}
 main .student {
   text-align: right;
   padding-right: 2.5%;
-  padding-top: 2.5%;
+  padding-top: 1.5%;
   color: rgb(247, 63, 63);
 }
 .hor-line {
@@ -214,15 +239,10 @@ main .student {
   margin-bottom: 2%;
 }
 .rect-white {
-  background-color: #fff;
-  margin-bottom: 2%;
-  width: 60%;
-}
-.rect-blue {
-  background-color: #6262d8;
-  margin-bottom: 2%;
-  width: 30%;
-  margin-right: 2%;
+  background-color: #f9f9f4;
+  margin-bottom: 0.2rem;
+  width: 100%;
+  display: flex;
 }
 .stroke {
   position: relative;
@@ -332,9 +352,16 @@ main a {
   width: 48%;
 }
 .student-records {
-  width: 100%;
+  width: 96%;
   transition: var(--transition);
   visibility: hidden;
+  background-color: #fff;
+  box-shadow: var(--light-shadow);
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.student-records:hover {
+  box-shadow: var(--dark-shadow);
 }
 .show-records {
   visibility: visible;
@@ -388,6 +415,8 @@ th {
 .mainAlert {
   padding-left: 2.5%;
   padding-right: 2.5%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .alert,
 .mainAlert {
