@@ -114,6 +114,10 @@ a {
   position: relative;
   top: 1rem;
 }
+.active {
+  background-color: teal;
+  padding-right: 0.5rem;
+}
 .fixed {
   position: fixed;
   width: 100%;
@@ -261,8 +265,7 @@ nav {
 .ml2 {
   margin-left: 2%;
 }
-header ul,
-main ul {
+header ul {
   width: 25rem;
 }
 .full-width {
@@ -302,7 +305,7 @@ main ul {
   width: 3rem;
   margin-left: 5%;
 }
-.aside li:hover {
+.aside li:hover:not(.close-btn) {
   background-color: teal;
   padding-right: 0.5rem;
 }
@@ -312,6 +315,10 @@ main ul {
 .aside li a:first-child {
   /* padding-right: 0.8rem; */
   width: 3.6rem;
+}
+.aside li p {
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 .aside-img {
   padding-right: 0.8rem;
@@ -393,48 +400,113 @@ main .student {
   h1 {
     font-size: 2.4rem;
   }
-  .aside {
-    width: 30% !important;
-  }
   .d-none-lapi {
     display: none;
   }
+  .aside {
+    width: 20% !important;
+  }
   main {
     margin-left: 0;
-    width: 96%;
-  }
-  .fixed {
-    width: 96%;
-  }
-}
-
-/* Tablet View */
-@media screen and (max-width: 768px) {
-  .aside {
-    visibility: visible;
+    width: 100%;
   }
   #close-icon {
     display: block;
   }
 }
 
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .aside {
+    visibility: visible;
+  }
+  main h2 {
+    font-size: 1.8rem;
+  }
+  main .hamburger-btn {
+    height: 3rem;
+  }
+  main .dash-hamb {
+    position: relative;
+    top: 1rem;
+  }
+  .wrap {
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 2%;
+  }
+  .col2-6,
+  .col2-4 {
+    width: 100%;
+  }
+  .aside {
+    width: 20% !important;
+  }
+  .aside li p {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
 /* Mobile View */
 @media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  header ul {
+    width: 50%;
+  }
   .aside {
     width: 40% !important;
   }
+  .aside ul {
+    padding-top: 0;
+  }
   .hamburger {
     display: block;
+  }
+  main .dash-hamb {
+    position: relative;
+    top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 2%;
+    font-size: 1.2rem;
+  }
+  .card2-6-wrapper {
+    font-size: 1.2rem;
+  }
+  .card-img {
+    height: 3rem;
+    margin-right: 2%;
+    margin-bottom: 2rem;
   }
 }
 
 /* SMALL MOBILE VIEW */
 @media screen and (max-width: 375px) {
+  .d-none-mobi {
+    display: none;
+  }
+  .mobi-lft {
+    margin-left: auto;
+  }
 }
 
 /* EXTRA SMALL MOBILE VIEW */
 @media screen and (max-width: 320px) {
   .aside {
     width: 50% !important;
+  }
+  .aside li p {
+    font-size: 1.4rem;
   }
 }
