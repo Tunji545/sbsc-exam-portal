@@ -90,7 +90,7 @@ h1 {
   margin-top: 5%;
 }
 .btn > a {
-  padding: 12px 20px;
+  padding: 15px 40px;
   border-radius: 10px;
   margin-right: 2%;
 }
@@ -109,7 +109,11 @@ h1 {
 img {
   width: 100%;
 }
-
+/* news-events */
+.news {
+  color: rgb(80, 79, 79);
+  padding: 5%;
+}
 /* About */
 .abt {
   margin: 2% 10%;
@@ -128,7 +132,8 @@ img {
   text-align: left;
 }
 /* Service */
-.service {
+.service,
+.news-events {
   display: flex;
   justify-content: center;
   gap: 3%;
@@ -136,10 +141,16 @@ img {
 }
 .txt > h3 {
   color: rgb(48, 37, 37);
-  font-size: 4vmin;
+  font-size: 5vmin;
+  margin-bottom: 5%;
 }
-.txt > p {
+.txt > p,
+.txt > ul > li > p {
   color: rgb(80, 79, 79);
+  padding: 5px;
+}
+.ser-img {
+  margin-top: 60%;
 }
 .service > div {
   display: grid;
@@ -152,7 +163,7 @@ footer {
   padding: 0 10%;
 }
 footer h1 {
-  font-size: 5vmin;
+  font-size: 5.5vmin;
 }
 .location > div > p {
   font-size: 3vmin;
@@ -190,6 +201,10 @@ textarea {
   padding: 1% 10%;
   justify-content: space-between;
 }
+.footer-cpyr > div > h5,
+.footer-cpyr-li > h6 {
+  font-size: 3vmin;
+}
 .footer-cpyr-li {
   margin-right: 4%;
 }
@@ -198,6 +213,38 @@ textarea {
   align-content: space-between;
 }
 /*  Media Query*/
+@media only screen and (min-width: 2000px) {
+  .navbar {
+    line-height: 180px;
+  }
+  .btn > a {
+    padding: 30px 100px;
+    border-radius: 10px;
+    margin-right: 2%;
+    font-size: 5vmin;
+  }
+  .content {
+    padding: 13% 10%;
+  }
+  .txt > p,
+  .txt > ul > li > p {
+    font-size: 3vmin;
+  }
+  .abt-col > div > p {
+    font-size: 3vmin;
+  }
+  input,
+  textarea {
+    padding: 6% 2%;
+    margin-bottom: 10px;
+    width: 500px;
+  }
+  textarea {
+    padding: 6% 2%;
+    margin-bottom: 10px;
+    width: 900px;
+  }
+}
 @media only screen and (max-width: 1000px) {
   .content {
     padding: 13% 10%;
@@ -214,6 +261,9 @@ textarea {
   }
 }
 @media only screen and (max-width: 900px) {
+  .navbar {
+    line-height: 100px;
+  }
   .content {
     padding: 16% 5%;
   }
@@ -223,6 +273,12 @@ textarea {
   }
   .navbar ul li a {
     margin: 1.1rem;
+  }
+  .btn > a {
+    padding: 14px 40px;
+    border-radius: 10px;
+    margin-right: 2%;
+    font-size: 4vmin;
   }
   h1 {
     font-size: 11vmin;
@@ -262,6 +318,9 @@ textarea {
   }
 }
 @media only screen and (max-width: 600px) {
+  .ser-img {
+    margin-top: 60%;
+  }
   .navbar a.nav-logo {
     font-size: 4.3vmin;
   }
@@ -282,9 +341,11 @@ textarea {
   .service {
     display: block;
   }
+  .txt {
+    padding-left: 15%;
+  }
   .service > div {
-    display: block;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
   }
   .ser-img {
     margin-left: auto;
@@ -300,6 +361,9 @@ textarea {
 @media only screen and (max-width: 520px) {
   .content {
     padding: 19% 5%;
+  }
+  .txt {
+    padding-left: 30%;
   }
   .content > p {
     margin: 0 3.5%;
@@ -354,7 +418,7 @@ textarea {
     margin: 0.3rem;
   }
   .content {
-    padding: 29% 5%;
+    padding: 35% 5%;
   }
   .content > p {
     line-height: 19px;
@@ -369,7 +433,7 @@ textarea {
     margin: 0.2rem;
   }
   .content {
-    padding: 42% 5%;
+    padding: 59% 5%;
   }
   .btn > a {
     font-size: 4.3vmin;
