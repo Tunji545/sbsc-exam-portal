@@ -38,6 +38,35 @@
             </div>
         </div>
 
+        <!-- Event and News -->
+        <div class="service txt-alg" id="service" >
+            <div>
+                <div class="ser-img">
+                    <img src="images/global.png" alt="ia" class="serimg txt-alg">
+                </div>              
+                <div class="txt">
+                    <h3>News Feed</h3>
+                    <ul>
+                        <li><p>ICT 234 Has Been Reshedule to 4pm.</p></li>
+                        <li><p>CSC 234 Class has been Cancelled.</p></li>
+                        <li><p>200 Level Computer Science Department has been Cancelled for Today.</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="ser-img">
+                    <img src="images/build.png" alt="ia" class="serimg">
+                </div>                
+                <div class="txt">
+                    <h3>Events</h3>
+                    <ul>
+                        <li><p>Abocoders Events is Coming Soon......</p></li>
+                        <li><p>Data Science For Lecturers.</p></li>
+                        <li><p>Introducing Robotics Department by Next Sememster. </p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <!-- Section Two - ABout and Services -->
         <!-- Services -->
         <div class="service txt-alg" id="service" >
@@ -91,11 +120,12 @@
         </div>
 
 
+
         <!--  Footer -->
         <footer>
             <!-- Location Info -->
             <div class="location" id="location">
-                <h1 class=" hd-hg logo b600 txt-color">GET IN TORCH </h1>
+                <h1 class=" hd-hg logo b600 txt-color">GET IN TOUCH </h1>
                 <div class="tele">
                     <p><img src="/sbsc-exam-portal/images/call.png" alt=""/> <strong class="txt-color">:</strong> +234 806 560 7842, +234 906 890 0830</p>
                 </div>
@@ -119,7 +149,7 @@
                         <input type="text" type="text" class="br-5 bd" id="userName" placeholder="Name" required><br>
                         <input type="text" type="email" class="br-5 bd" id="userEmail" placeholder="Email Address"
                             required><br>
-                        <input type="text" type="email" class="br-5 bd" id="userEmail" placeholder="Phone Number"
+                        <input type="text" type="number" class="br-5 bd" id="userNumber" placeholder="Phone Number"
                             required><br>
                     </div>
                     <div>
@@ -129,7 +159,7 @@
                     <br>
 
                 </div>
-                <button class="btnform b700 br-5 wh" type="submit">Send Message</button>
+                <button class="btnform b700 br-5 wh" type="submit" onclick="submitMeassage()">Send Message</button>
             </form>
         </footer>
         <!-- Footer Copyright -->
@@ -144,7 +174,7 @@
             </div>
         </div>
     </div>
-
+<script src="../sbsc-exam-portal/js/contactform.js"></script>
 </body>
 
 </html>

@@ -88,16 +88,16 @@ form.addEventListener('submit', (e) => {
       const studentData = Object.assign({}, ...arr)
       studentData.id = 'qw' + new Date().getTime().toString()
       studentData.subject = checkedArr
+
       selectDept.id === 'department' &&
         (studentData.department = selectDept.value)
       selectLevel.id === 'level' && (studentData.level = selectLevel.value)
       studentArr = JSON.parse(sessionStorage.getItem('studentData')) || []
       studentArr.push(studentData)
-      console.log(studentArr)
+
       container.classList.add('show-records')
       showAlert('Item Added', 'success')
     } else if (input.value && editFlag) {
-      console.log(selectLevel.value)
       const tdCollection = [...editElement.children]
       insertToTableRow(tdCollection)
       showAlert('value changed', 'success')
@@ -119,7 +119,6 @@ form.addEventListener('submit', (e) => {
 
   studentBio.innerHTML = ''
   for (let student of data) {
-    console.log(student)
     studentBio.innerHTML += `
             <tr id='${student.id}' class="flex space-between wrap">
                   <td class="d-none-mobile">${student.yearEnrolled}</td>
@@ -185,6 +184,9 @@ const setToDefault = () => {
   inputEls.map((input) => {
     input.value = ''
   })
+  checkboxes.map((checkbox) => {
+    checkbox.checked = false
+  })
   editFlag = false
   editId = ''
   submit.textContent = 'submit'
@@ -231,13 +233,10 @@ studentBio.addEventListener('click', (e) => {
   }
   if (e.target.classList.contains('edit')) {
     let editEl = e.target.parentElement
-    console.log(editEl)
     editEl.addEventListener('click', () => {
       modalOverlay.classList.toggle('open-modal')
       editElement = editEl.parentElement.parentElement
-      console.log(editElement.id)
       const tdCollection = [...editElement.children]
-      console.log(tdCollection)
       insertToInputValue(tdCollection)
       editFlag = true
       editId = editElement.id
