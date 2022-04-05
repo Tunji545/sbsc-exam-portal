@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Result Management System" />
+    <meta
+      name="description"
+      content="The Admin Dashboard for the Result Management System"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/students.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <script src="../js/result.js" type="module" defer></script>
+    <title>Result Management Admin Dashboard</title>
+  </head>
+  <body>
+    <header class="px fixed">
+      <nav class="flex space-between align-center">
+        <h1 class="capitalize">my college admin</h1>
+        <ul class="flex space-between align-center">
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/email.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/alarm.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center mobi-lft">
+            <a href="#"
+              ><img src="../images/user.png" alt="" /><a
+                href="#"
+                class="admin wh"
+                >admin</a
+              ></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="aside d-none-lapi">
+      <ul class="pt1 flex column space-between">
+        <li id="close-icon" class="d-none close-icon">
+          <div class="close-btn1">
+            <img src="../images/close.png" alt="" />
+          </div>
+        </li>
+        <li class="pl1">
+          <a href="../pages/user-management.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">user management</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/dashboard.html" class="flex align-center">
+            <img src="../images/dashboard.png" alt="" class="aside-img" />
+            <p class="capitalize">Dashboard</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/students.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">Students</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/department.html" class="flex align-center"
+            ><img src="../images/classes.png" alt="" class="aside-img" />
+            <p class="capitalize">Department</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/scores.html" class="flex align-center"
+            ><img src="../images/setting.png" alt="" class="aside-img" />
+            <p class="capitalize">Scores</p>
+          </a>
+        </li>
+        <li class="pl1 active">
+          <a href="#" class="flex align-center"
+            ><img src="../images/result.png" alt="" class="aside-img" />
+            <p class="capitalize">Results</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <div class="students-wrapper1 pb1">
+        <p class="mainAlert"></p>
+        <h3 class="student"></h3>
+        <div class="flex space-between align-center dash-hamb">
+          <h2 class="uppercase blk2 pl2">students</h2>
+          <div class="hamburger hamburger-btn" id="hamburger">
+            <img src="../images/hamburger.png" alt="" />
+          </div>
+        </div>
+        <hr class="hor-line" />
+        <div class="flex pl3 space-between">
+          <div class="rect-white space-between pl2 align-center mx py2 pr">
+            <ul class="flex space-between">
+              <li>
+                <a href="dashboard.html" class="flex align-center">
+                  <img src="../images/dashboard.png" alt="" class="mr" />
+                  <p>dashboard</p>
+                </a>
+              </li>
+              <li class="stroke d-none-ext-mobi">/</li>
+              <li class="d-none-ext-mobi">
+                <a href="#" class="flex align-center">
+                  <img src="../images/chart.png" alt="" class="mr" />
+                  <p>result</p>
+                </a>
+              </li>
+            </ul>
+            <form class="form-search">
+              <input type="text" class="input-search" />
+              <button type="submit" class="searh-btn">SEARCH</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="student-container pb1">
+          <div class="flex space-between wrap">
+            <div class="student-info">
+              <p class="blk1 mt1">STUDENT INFORMATION</p>
+              <table class="table table1 blk2">
+                <thead>
+                  <tr>
+                    <td class="col2">Student Name</td>
+                    <td class="col2">Nasir Omie</td>
+                  </tr>
+                  <tr>
+                    <td>Matric</td>
+                    <td>1001</td>
+                  </tr>
+                  <tr>
+                    <td>Level</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>Department</td>
+                    <td>Chemistry</td>
+                  </tr>
+                  <tr>
+                    <td>Year</td>
+                    <td>2020</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="grade-chart">
+              <p class="blk1 mt1">GRADE POINT CHART</p>
+              <table class="table table1 blk2">
+                <thead>
+                  <tr>
+                    <th class="col3">Letter Grade</th>
+                    <th class="col3">Interver</th>
+                    <th class="col3">Grade Point</th>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>70 - 100</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>60 - 70</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>C</td>
+                    <td>2.5 - 4</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>2 - 2.5</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>0 - 2</td>
+                    <td>0</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="student-img">
+              <img src="../images/student-profile.png" alt="" />
+            </div>
+          </div>
+          <div class="flex space-between wrap">
+            <div class="examination">
+              <p class="blk1 mt1">RESULT INFORMATION</p>
+              <table class="table table1 blk2">
+                <thead>
+                  <tr>
+                    <th class="width4">SN</th>
+                    <th class="width3">Course Code</th>
+                    <th class="width3">Highest Mark</th>
+                    <th class="width3">Exams</th>
+                    <th class="width4">CA</th>
+                    <th class="width4">Grade</th>
+                    <th class="width4 d-none-mobile">GP</th>
+                    <th class="width3 d-none-mobile">Comment</th>
+                  </tr>
+                  <tr>
+                    <td class="width4">1</td>
+                    <td class="width3">MTH101</td>
+                    <td class="width3">70</td>
+                    <td class="width3">40</td>
+                    <td class="width4">30</td>
+                    <td class="width4">A</td>
+                    <td class="width4 d-none-mobile">5</td>
+                    <td class="width3 d-none-mobile">Excellence</td>
+                  </tr>
+                  <tr>
+                    <td class="width4">1</td>
+                    <td class="width3">PHY101</td>
+                    <td class="width3">60</td>
+                    <td class="width3">40</td>
+                    <td class="width4">20</td>
+                    <td class="width4">B</td>
+                    <td class="width4 d-none-mobile">5</td>
+                    <td class="width3 d-none-mobile">Excellence</td>
+                  </tr>
+                  <tr>
+                    <td class="width4">1</td>
+                    <td class="width3">CHM101</td>
+                    <td class="width3">50</td>
+                    <td class="width3">30</td>
+                    <td class="width4">20</td>
+                    <td class="width4">C</td>
+                    <td class="width4 d-none-mobile">5</td>
+                    <td class="width3 d-none-mobile">Excellence</td>
+                  </tr>
+                  <tr>
+                    <td class="width4">1</td>
+                    <td class="width3">BIO1OO1</td>
+                    <td class="width3">45</td>
+                    <td class="width3">20</td>
+                    <td class="width4">25</td>
+                    <td class="width4">D</td>
+                    <td class="width4 d-none-mobile">5</td>
+                    <td class="width3 d-none-mobile">Excellence</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="flex space-between wrap">
+            <div class="col2-1">
+              <p class="blk1 mt1">POSITION IN MERIT LIST</p>
+              <table class="table table1 blk2">
+                <thead>
+                  <tr>
+                    <td class="col2">Class</td>
+                    <td class="col2">1 out of 2</td>
+                  </tr>
+                  <tr>
+                    <td class="col2">Depart.</td>
+                    <td class="col2">1 out of 2</td>
+                  </tr>
+                  <tr>
+                    <td class="col2">Faculty</td>
+                    <td class="col2">1 out of 4</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="col2-1">
+              <p class="blk1 mt1">TOTAL MARK & GPA</p>
+              <table class="table table1 blk2">
+                <thead>
+                  <tr>
+                    <td class="col2">Total Mark</td>
+                    <td class="col2">351</td>
+                  </tr>
+                  <tr>
+                    <td class="col2">GPA</td>
+                    <td class="col2">5</td>
+                  </tr>
+                  <tr>
+                    <td class="col2">Letter Grading</td>
+                    <td class="col2">A</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

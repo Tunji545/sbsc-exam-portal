@@ -181,7 +181,7 @@ img {
   background-color: teal;
 }
 header {
-  background-color: var(--clr-black);
+  background-image: linear-gradient(to right, #082e7e, #04925e);
   color: var(--clr-white);
   box-shadow: var(--light-shadow);
 }
@@ -200,6 +200,9 @@ nav {
 }
 .pt2 {
   padding-top: 2%;
+}
+.pt3 {
+  padding-top: 3%;
 }
 .pl1 {
   padding-left: 6% !important;
@@ -281,7 +284,7 @@ header ul {
   padding-left: 0.4rem;
 }
 .aside {
-  background-color: var(--clr-black);
+  background-image: linear-gradient(#082e7e, #04925e);
   color: var(--clr-white);
   position: fixed;
   top: 6.1rem;
@@ -310,7 +313,7 @@ header ul {
   padding-right: 0.5rem;
 }
 .aside li a {
-  color: #888;
+  color: #fff;
 }
 .aside li a:first-child {
   /* padding-right: 0.8rem; */

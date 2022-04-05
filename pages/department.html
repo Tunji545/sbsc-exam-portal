@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Result Management System" />
+    <meta
+      name="description"
+      content="The Admin Dashboard for the Result Management System"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/students.css" />
+    <link rel="stylesheet" href="../css/department.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <script src="../js/department.js" defer></script>
+    <title>Result Management Admin Dashboard</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="px fixed">
+      <nav class="flex space-between align-center">
+        <h1 class="capitalize">my college admin</h1>
+        <ul class="flex space-between align-center">
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/email.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/alarm.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center mobi-lft">
+            <a href="#"
+              ><img src="../images/user.png" alt="" /><a
+                href="#"
+                class="admin wh"
+                >admin</a
+              ></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Aside -->
+    <aside class="aside d-none-lapi">
+      <ul class="pt1 flex column space-between">
+        <li id="close-icon" class="d-none close-icon">
+          <div class="close-btn1">
+            <img src="../images/close.png" alt="" />
+          </div>
+        </li>
+        <li class="pl1">
+          <a href="../pages/dashboard.html" class="flex align-center">
+            <img src="../images/dashboard.png" alt="" class="aside-img" />
+            <p class="capitalize">dashboard</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/students.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">students</p>
+          </a>
+        </li>
+        <li class="pl1 active">
+          <a href="../pages/department.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">department</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="#" class="flex align-center"
+            ><img src="../images/classes.png" alt="" class="aside-img" />
+            <p class="capitalize">classes</p>
+          </a>
+        </li>
+        <li class="pl1 active">
+          <a href="../pages/scores.html" class="flex align-center"
+            ><img src="../images/setting.png" alt="" class="aside-img" />
+            <p class="capitalize">Scores</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/result.html" class="flex align-center"
+            ><img src="../images/result.png" alt="" class="aside-img" />
+            <p class="capitalize">results</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- Main -->
+    <main>
+      <div class="students-wrapper pb1">
+        <p class="mainAlert"></p>
+        <h3 class="student"></h3>
+        <div class="flex space-between align-center dash-hamb">
+          <h2 class="uppercase blk2 pl2">Student Result</h2>
+          <div class="hamburger hamburger-btn" id="hamburger">
+            <img src="../images/hamburger.png" alt="" />
+          </div>
+        </div>
+        <hr class="hor-line" />
+        <div class="flex pl3 space-between">
+          <div class="rect-white space-between pl2 align-center mx py2 pr">
+            <ul class="flex space-between">
+              <li>
+                <a href="dashboard.html" class="flex align-center">
+                  <img src="../images/dashboard.png" alt="" class="mr" />
+                  <p>dashboard</p>
+                </a>
+              </li>
+              <li class="stroke d-none-ext-mobi">/</li>
+              <li class="d-none-ext-mobi">
+                <a href="../pages/scores.html" class="flex align-center">
+                  <img src="../images/chart.png" alt="" class="mr" />
+                  <p>result</p>
+                </a>
+              </li>
+            </ul>
+            <button class="modal-btn flex center">
+            </button>
+          </div>
+        </div>
+
+      
+      </div>
+      <!-- <h3>I.T Department</h3> -->
+        <div>
+              <h3 class="tab-h3">I.T DEPARTMENT</h3>
+            <table>
+                    <thead>
+                        <tr class="b900">
+                            <th>100 Level</th> 
+                            <th>200 Level</th>
+                            <th>300 Level</th>
+                            <th>400 Level</th>
+                            <th>500 Level</th>
+                        </tr>
+                        <tr>
+                            <td>ICT 120</td>
+                            <td>ICT 220</td>
+                            <td>ICT 320</td>
+                            <td>ICT 420</td>
+                            <td>ICT 520</td>
+                        </tr> 
+                        <tr class="tdata">
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td>ICT 593</td>
+                        </tr>
+                        <tr>
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td>ICT 593</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td>ICT 593</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td>GNS 509</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td>GNS 509</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td>GNS 509</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td>GNS 509</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td>GNS 509</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div> 
+            <h3 class="b900 tab-h3a">ELECTRICAL ENGINEERING DEPARTMENT</h3>
+            <table>
+                    <thead>
+                        <tr class="b900">
+                            <th>100 Level</th> 
+                            <th>200 Level</th>
+                            <th>300 Level</th>
+                            <th>400 Level</th>
+                            <th class="d-none">500 Level</th>
+                        </tr>
+                        <tr>
+                            <td>ENG 120</td>
+                            <td>ENG 220</td>
+                            <td>ICT 320</td>
+                            <td>ICT 420</td>
+                            <td class="d-none">ICT 520</td>
+                        </tr> 
+                        <tr class="tdata">
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td class="d-none">ICT 593</td>
+                        </tr>
+                        <tr>
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td class="d-none">ICT 593</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>ICT 193</td>
+                            <td>ICT 293</td>
+                            <td>ICT 393</td>
+                            <td>ICT 493</td>
+                            <td class="d-none">ICT 593</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td class="d-none">GNS 509</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td class="d-none">GNS 509</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td class="d-none">GNS 509</td>
+                        </tr>
+                        <tr class="tdata">
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td class="d-none">GNS 509</td>
+                        </tr>
+                        <tr>
+                            <td>GNS 093</td>
+                            <td>GNS 205</td>
+                            <td>GNS 342</td>
+                            <td>GNS 400</td>
+                            <td class="d-none">GNS 509</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- modal -->
+    
+    <!-- <script src="../js/scores.js"></script> -->
+  </body>
+</html>

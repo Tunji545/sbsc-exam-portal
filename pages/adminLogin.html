@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/sbsc-exam-portal/css/studentLogin.css" />
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <!-- Sign In Form -->
+          <form class="sign-in-form" onsubmit="loginData(event);">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <img src="../images/bid.png" alt="" width="25px" />
+              <input type="email" placeholder="Email" id="email" />
+            </div>
+            <div class="input-field">
+              <img src="../images/bemail.png" alt="" width="25px" />
+              <input type="password" placeholder="Password" id="pswd" />
+            </div>
+            <input
+              type="submit"
+              value="Sign in"
+              class="btn solid"
+              id="submit"
+            />
+          </form>
+          <!-- Sign Up Form -->
+          <form class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <img src="../images/tuser.png" alt="" width="25px" />
+              <input
+                type="text"
+                id="fu_name"
+                name="fu_name"
+                placeholder=" FullName"
+              />
+            </div>
+            <div class="input-field">
+              <img src="../images/temail.png" alt="" width="25px" />
+              <input
+                type="email"
+                id="e_mail"
+                name="e_mail"
+                placeholder="Email"
+              />
+            </div>
+            <div class="input-field">
+              <img src="../images/tpass.png" alt="" width="25px" />
+              <input
+                type="password"
+                id="psw"
+                name="psw"
+                placeholder="Password"
+              />
+            </div>
+            <div class="input-field">
+              <img src="../images/tpass.png" alt="" width="25px" />
+              <input
+                type="password"
+                id="con_pass"
+                name="con_pass"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <input
+              type="submit"
+              onclick="saveSignUpData()"
+              class="btn btn2"
+              value="Sign up"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Register</h3>
+            <p>Email and Password are required.</p>
+            <button class="btn transparent" id="sign-up-btn">Sign up</button>
+          </div>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Login to have Access</h3>
+            <p>Only for the Staff under Administration.</p>
+            <button class="btn transparent" id="sign-in-btn">Sign in</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/adminLogin.js"></script>
+    <script src="/sbsc-exam-portal/js/register.js"></script>
+  </body>
+</html>

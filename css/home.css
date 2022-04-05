@@ -1,0 +1,378 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border-style: none;
+}
+.wh {
+  color: #fff;
+}
+.txt-alg {
+  text-align: center;
+}
+.txt-color {
+  color: #04925e;
+}
+.bg-txt-color {
+  background-color: #04925e;
+}
+.txt-color2 {
+  color: #082e7e;
+}
+.d-flex {
+  display: flex;
+}
+.bd {
+  border: 2px solid #04925e;
+}
+.br-5 {
+  border-radius: 5px;
+}
+.b900 {
+  font-weight: 900;
+}
+.b700 {
+  font-weight: 700;
+}
+.sec1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/sbsc-exam-portal/images/homeimg.jpg);
+  background-position: center;
+  background-size: cover;
+  /* background-image:linear-gradient(-45deg, #04925E, #082E7E);   */
+  width: 100%;
+  height: 100vh;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #fff;
+  line-height: 80px;
+  height: 14vh;
+  font-size: 3vmin;
+  padding: 0 10%;
+  font-family: 'Poppins';
+}
+.navbar a.nav-logo {
+  font-size: 5.5vmin;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.navbar ul {
+  display: flex;
+}
+.navbar ul li a {
+  color: #d8d8d8;
+  margin: 3rem;
+}
+.navbar ul li a:hover {
+  color: #04925e;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 15px;
+}
+.content {
+  padding: 11% 14%;
+  text-align: center;
+  font-family: 'Poppins';
+}
+h1 {
+  font-size: 12.5vmin;
+}
+.content > p {
+  font-size: 3vmin;
+  padding: 2% 7%;
+  text-align: center;
+  color: rgb(199, 194, 194);
+}
+.btn {
+  margin-top: 5%;
+}
+.btn > a {
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-right: 2%;
+}
+.btn > a:hover {
+  background: transparent;
+  color: #04925e;
+  border: 2px solid #04925e;
+  filter: #04925e (1);
+}
+.image {
+  width: 55%;
+  align-items: center;
+  transition: 0.7s ease-in;
+  margin: 10% 5%;
+}
+img {
+  width: 100%;
+}
+
+/* About */
+.abt {
+  margin: 2% 10%;
+  padding: 2% 3%;
+  background-color: #000;
+  border-radius: 3px;
+}
+.abt-col {
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  gap: 2%;
+}
+.abt-col > div > p {
+  color: rgb(199, 194, 194);
+  padding-bottom: 9%;
+  text-align: left;
+}
+/* Service */
+.service {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  margin: 6% 10%;
+}
+.txt > h3 {
+  color: rgb(48, 37, 37);
+  font-size: 4vmin;
+}
+.txt > p {
+  color: rgb(80, 79, 79);
+}
+.service > div {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+/* cONTACT */
+footer {
+  margin-top: 2%;
+  text-align: center;
+  padding: 0 10%;
+}
+footer h1 {
+  font-size: 5vmin;
+}
+.location > div > p {
+  font-size: 3vmin;
+  margin: 0.8% 0;
+}
+.formdiv {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+}
+.location > div > p > img {
+  width: 20px;
+}
+input,
+textarea {
+  padding: 6% 2%;
+  margin-bottom: 10px;
+  width: 300px;
+  background-color: #04925e13;
+}
+.btnform {
+  margin-bottom: 1rem;
+  padding: 2% 4%;
+  background-color: #04925e;
+}
+.btnform:hover {
+  background-color: transparent;
+  border: 2px solid #04925e;
+  color: #04925e;
+}
+
+/* ******************* Footer Copyright ******************** */
+.footer-cpyr {
+  background-color: #04925e1b;
+  padding: 1% 10%;
+  justify-content: space-between;
+}
+.footer-cpyr-li {
+  margin-right: 4%;
+}
+.footer-cpyr-li > h6 {
+  margin-right: 15%;
+  align-content: space-between;
+}
+/*  Media Query*/
+@media only screen and (max-width: 1000px) {
+  .content {
+    padding: 13% 10%;
+  }
+  .content > p {
+    font-size: 3.5vmin;
+    padding: 2% 8%;
+  }
+  .navbar ul li a {
+    margin: 2rem;
+  }
+  h1 {
+    font-size: 12vmin;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .content {
+    padding: 16% 5%;
+  }
+  .content > p {
+    font-size: 3.2vmin;
+    padding: 2% 12%;
+  }
+  .navbar ul li a {
+    margin: 1.1rem;
+  }
+  h1 {
+    font-size: 11vmin;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .navbar ul li a {
+    margin: 0.7rem;
+  }
+  .content {
+    padding: 17% 5%;
+  }
+  .content > p {
+    font-size: 3.2vmin;
+    padding: 2% 10%;
+  }
+  input,
+  textarea {
+    padding: 7.5% 2%;
+    width: 260px;
+  }
+  h1 {
+    font-size: 10vmin;
+  }
+  .navbar a.nav-logo {
+    font-size: 4.7vmin;
+  }
+  .abt-col {
+    display: block;
+    grid-template-columns: 25% 1fr 25%;
+  }
+  .abt-col > div {
+    margin-bottom: 7%;
+  }
+  .abt-col > div > p {
+    padding-bottom: 4%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navbar a.nav-logo {
+    font-size: 4.3vmin;
+  }
+  h1 {
+    font-size: 10vmin;
+  }
+  .content > p {
+    font-size: 3vmin;
+    margin: 0 0;
+  }
+  input,
+  textarea {
+    width: 240px;
+  }
+  .footer-cpyr {
+    padding: 3% 7%;
+  }
+  .service {
+    display: block;
+  }
+  .service > div {
+    display: block;
+    margin-bottom: 10%;
+  }
+  .ser-img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+  }
+  .serimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .content {
+    padding: 19% 5%;
+  }
+  .content > p {
+    margin: 0 3.5%;
+    font-size: 3.5vmin;
+  }
+  .formdiv {
+    display: block;
+    padding: 0% 0%;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+  .footer-cpyr-li > h6 {
+    margin-right: 8%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .navbar a.nav-logo {
+    font-size: 4.9vmin;
+  }
+  .navbar ul li a {
+    margin: 0.34rem;
+  }
+  .content {
+    padding: 25% 5%;
+  }
+  .content > p {
+    margin: 0 3.5%;
+    font-size: 3.8vmin;
+    line-height: 19px;
+  }
+  .location > div > p {
+    font-size: 2.8vmin;
+  }
+  .footer-cpyr {
+    display: block;
+    text-align: center;
+  }
+  .footer-cpyr-li {
+    margin-right: 0;
+    padding: 1% 0;
+    justify-content: center;
+  }
+  .service {
+    display: block;
+    gap: 3%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .navbar ul li a {
+    margin: 0.3rem;
+  }
+  .content {
+    padding: 29% 5%;
+  }
+  .content > p {
+    line-height: 19px;
+  }
+  .btn > a {
+    font-size: 4.3vmin;
+    padding: 9px 13px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .navbar ul li a {
+    margin: 0.2rem;
+  }
+  .content {
+    padding: 42% 5%;
+  }
+  .btn > a {
+    font-size: 4.3vmin;
+    padding: 8px 12px;
+  }
+}

@@ -19,13 +19,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <script src="../js/students.js" defer></script>
+    <script src="../js/students.js" type="module" defer></script>
     <title>Result Management Admin Dashboard</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="px fixed">
       <nav class="flex space-between align-center">
-        <h1 class="capitalize">my college admin</h1>
+        <h1 class="capitalize">Resys</h1>
         <ul class="flex space-between align-center">
           <li class="flex space-between align-center d-none-mobi">
             <a href="#"><img src="../images/email.png" alt="" /></a
@@ -53,6 +54,7 @@
         </ul>
       </nav>
     </header>
+    <!-- Aside -->
     <aside class="aside d-none-lapi">
       <ul class="pt1 flex column space-between">
         <li id="close-icon" class="d-none close-icon">
@@ -63,41 +65,42 @@
         <li class="pl1">
           <a href="../pages/dashboard.html" class="flex align-center">
             <img src="../images/dashboard.png" alt="" class="aside-img" />
-            <p class="capitalize">dashboard</p>
+            <p class="capitalize">Dashboard</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/user-management.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">user management</p>
           </a>
         </li>
         <li class="pl1 active">
           <a href="../pages/students.html" class="flex align-center">
             <img src="../images/students.png" alt="" class="aside-img" />
-            <p class="capitalize">students</p>
+            <p class="capitalize">Students</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/department.html" class="flex align-center"
             ><img src="../images/classes.png" alt="" class="aside-img" />
-            <p class="capitalize">classes</p>
+            <p class="capitalize">Department</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/scores.html" class="flex align-center"
             ><img src="../images/setting.png" alt="" class="aside-img" />
-            <p class="capitalize">exams</p>
+            <p class="capitalize">Scores</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/result.html" class="flex align-center"
             ><img src="../images/result.png" alt="" class="aside-img" />
-            <p class="capitalize">results</p>
-          </a>
-        </li>
-        <li class="pl1">
-          <a href="#" class="flex align-center"
-            ><img src="../images/course.png" alt="" class="aside-img" />
-            <p class="capitalize">courses</p>
+            <p class="capitalize">Results</p>
           </a>
         </li>
       </ul>
     </aside>
+    <!-- Main -->
     <main>
       <div class="students-wrapper pb1">
         <p class="mainAlert"></p>
@@ -122,7 +125,7 @@
               <li class="d-none-ext-mobi">
                 <a href="#" class="flex align-center">
                   <img src="../images/chart.png" alt="" class="mr" />
-                  <p>schedule</p>
+                  <p>students</p>
                 </a>
               </li>
             </ul>
@@ -136,7 +139,7 @@
 
         <div class="student-records pb1">
           <p class="students-table pl2 uppercase">Students Table</p>
-          <table class="table">
+          <table class="table table1 blk2">
             <thead>
               <tr class="flex space-between wrap">
                 <th class="d-none-mobile">Years</th>
@@ -191,16 +194,6 @@
                 />
               </div>
               <div class="input-wrapper">
-                <label class="label" for="level">Stude&nbsp;Level</label>
-                <input type="number" id="level" placeholder="Level:" />
-              </div>
-            </div>
-            <div class="flex space-between align-center">
-              <div class="input-wrapper">
-                <label class="label" for="department">Department</label>
-                <input type="text" id="department" placeholder="Department" />
-              </div>
-              <div class="input-wrapper">
                 <label class="label" for="email">Email&nbsp;Addr:</label>
                 <input
                   type="email"
@@ -209,24 +202,34 @@
                 />
               </div>
             </div>
-            <div class="flex space-between align-center">
+            <div class="flex space-between align-center select-wrapper">
               <div class="input-wrapper">
-                <label class="label" for="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Enter your password:"
-                />
-              </div>
-              <div class="input-wrapper">
-                <label class="label" for="confirmPassword"
-                  >Confirm&nbsp;pass</label
+                <label for="department" class="label label-sel"
+                  >Choose a Dept.</label
                 >
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  placeholder="Confirm Enter:"
-                />
+                <div class="select">
+                  <select name="department" id="department" class="select-elem">
+                    <option value="maths dept">Maths</option>
+                    <option value="chemistry dept">Chemistry</option>
+                    <option value="physics dept">Physics</option>
+                    <option value="biology dept">Biology</option>
+                    <option value="computer dept">Computer</option>
+                    <option value="engineering dept">Engineering</option>
+                    <option value="accounting dept">Accounting</option>
+                    <option value="economics dept">Economics</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="level" class="label label-sel">Choose level.</label>
+                <select name="level" id="level" class="select-elem">
+                  <option value="100 level">100</option>
+                  <option value="200 level">200</option>
+                  <option value="300 level">300</option>
+                  <option value="400 level">400</option>
+                  <option value="500 level">500</option>
+                </select>
               </div>
             </div>
             <div class="flex space-between align-center">
@@ -238,9 +241,147 @@
                   placeholder="Year Enrolled:"
                 />
               </div>
-              <div class="input-wrapper">
-                <label class="label" for="courses">Stud&nbsp;Course</label>
-                <input type="text" id="courses" placeholder="Courses:" />
+            </div>
+            <div class="check-cont">
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="mth"
+                  name="mth"
+                  class="checkbox"
+                  value="mth"
+                />
+                <label for="mth">Mth</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="eng"
+                  name="eng"
+                  class="checkbox"
+                  value="eng"
+                />
+                <label for="eng">Eng</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="soc"
+                  name="soc"
+                  class="checkbox"
+                  value="soc"
+                />
+                <label for="soc">Soc</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="bio"
+                  name="bio"
+                  class="checkbox"
+                  value="bio"
+                />
+                <label for="bio">Bio</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="chm"
+                  name="chm"
+                  class="checkbox"
+                  value="chm"
+                />
+                <label for="chm">Chm</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="phy"
+                  name="phy"
+                  class="checkbox"
+                  value="phy"
+                />
+                <label for="phy">Phy</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="ecm"
+                  name="ecm"
+                  class="checkbox"
+                  value="ecm"
+                />
+                <label for="ecm">Ecm</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="agr"
+                  name="agr"
+                  class="checkbox"
+                  value="agr"
+                />
+                <label for="agr">Agr</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="civ"
+                  name="civ"
+                  class="checkbox"
+                  value="civ"
+                />
+                <label for="civ">Civ Eng.</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="cmp"
+                  name="cmp"
+                  class="checkbox"
+                  value="cmp"
+                />
+                <label for="cmp">Cmp Eng.</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="elec"
+                  name="elec"
+                  class="checkbox"
+                  value="elec"
+                />
+                <label for="elec">Elec Eng.</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="mech"
+                  name="mech"
+                  class="checkbox"
+                  value="mech"
+                />
+                <label for="mech">Mech Eng.</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="phil"
+                  name="phil"
+                  class="checkbox"
+                  value="phi"
+                />
+                <label for="phil">Phi.</label>
+              </div>
+              <div class="inline-flex">
+                <input
+                  type="checkbox"
+                  id="gns"
+                  name="gns"
+                  class="checkbox"
+                  value="gns"
+                />
+                <label for="gns">Gns.</label>
               </div>
             </div>
           </div>

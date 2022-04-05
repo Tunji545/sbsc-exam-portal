@@ -1,14 +1,19 @@
+import { showAlert } from './export-functions.js'
+
 const modalButton = document.querySelector('.modal-btn')
 const modalOverlay = document.querySelector('.modal-overlay')
 const closeBtn = document.querySelector('.close-btn')
 const form = document.querySelector('form')
 const studentBio = document.querySelector('.studentBio')
 const student = document.querySelector('.student')
-const alert = document.querySelector('.alert')
-const mainAlert = document.querySelector('.mainAlert')
 const container = document.querySelector('.student-records')
 const submit = document.querySelector('.submit')
 const studentWrapper = document.querySelector('.students-wrapper')
+let checkboxes = document.querySelectorAll("input[type='checkbox']")
+let selectDept = document.querySelector('#department')
+let selectLevel = document.querySelector('#level')
+
+checkboxes = [...checkboxes]
 
 // Toggle Button
 document.getElementById('hamburger').addEventListener('click', () => {
@@ -21,8 +26,9 @@ document.getElementById('close-icon').addEventListener('click', () => {
 let editElement
 let editFlag = false
 let editId = ''
+let markedCheck
 
-let inputEls = document.querySelectorAll('input')
+let inputEls = document.querySelectorAll(`input:not(input[type='checkbox'])`)
 inputEls = [...inputEls]
 
 modalButton.addEventListener('click', () => {
@@ -34,11 +40,23 @@ closeBtn.addEventListener('click', () => {
   modalOverlay.classList.remove('open-modal')
 })
 
-// Form
 const arr = []
-let studentArr = []
+let checkedArr = []
+
+export let studentArr = []
 form.addEventListener('submit', (e) => {
   e.preventDefault()
+
+  for (let checkbox of checkboxes) {
+    if (checkbox.checked && !editFlag) {
+      markedCheck = checkbox.value
+      checkedArr.push(markedCheck)
+    } else if (checkbox.checked && editFlag) {
+    } else {
+      showAlert('Please, select atleast a course', 'danger')
+    }
+  }
+
   inputEls.map((input) => {
     if (input.value && !editFlag) {
       if (input.type === 'text') {
@@ -69,15 +87,24 @@ form.addEventListener('submit', (e) => {
 
       const studentData = Object.assign({}, ...arr)
       studentData.id = 'qw' + new Date().getTime().toString()
+      studentData.subject = checkedArr
+      selectDept.id === 'department' &&
+        (studentData.department = selectDept.value)
+      selectLevel.id === 'level' && (studentData.level = selectLevel.value)
       studentArr = JSON.parse(sessionStorage.getItem('studentData')) || []
       studentArr.push(studentData)
+      console.log(studentArr)
       container.classList.add('show-records')
       showAlert('Item Added', 'success')
     } else if (input.value && editFlag) {
+      console.log(selectLevel.value)
       const tdCollection = [...editElement.children]
       insertToTableRow(tdCollection)
       showAlert('value changed', 'success')
       submit.textContent = 'submit'
+      inputEls.map((input) => {
+        input.value = ''
+      })
       // edit Local Storage
       editsessionStorage(editId, inputEls[i].value)
       setBackToDefault()
@@ -87,20 +114,24 @@ form.addEventListener('submit', (e) => {
   })
   sessionStorage.setItem('studentData', JSON.stringify(studentArr))
   let data = JSON.parse(sessionStorage.getItem('studentData'))
+
   student.textContent = `You have ${studentArr.length} students`
 
   studentBio.innerHTML = ''
   for (let student of data) {
+    console.log(student)
     studentBio.innerHTML += `
             <tr id='${student.id}' class="flex space-between wrap">
                   <td class="d-none-mobile">${student.yearEnrolled}</td>
-                  <td>${student.courses}</td>
+                  <td  class="subjects">${student.subject
+                    .join(',')
+                    .toUpperCase()}</td>
                   <td>${student.firstName}</td>
                   <td>${student.lastName}</td>
                   <td>${student.matricNo}</td>
                   <td class="d-none-mobile">${student.level}</td>
                   <td class="d-none-mobile">${student.department}</td>
-                  <td class="d-none-mobile">${student.email}</td>
+                  <td class="d-none-mobile subjects">${student.email}</td>
                   <td class="flex">
                   <button type="button" class="edit-btn"><img src="../images/editBtn.png" class="edit"></button>
                   <button type="button" class="delete-btn"><img src="../images/trash.png" class="delete"></button>
@@ -125,19 +156,19 @@ const displayStudentData = () => {
         department,
         matricNo,
         yearEnrolled,
-        courses,
+        subject,
         id,
       } = student
       studentBio.innerHTML += `
         <tr id='${id}' class="flex space-between wrap">
               <td class="d-none-mobile">${yearEnrolled}</td>
-              <td>${courses}</td>
+              <td class="subjects">${subject.join(', ').toUpperCase()}</td>
               <td>${firstName}</td>
               <td>${lastName}</td>
               <td>${matricNo}</td>
               <td class="d-none-mobile">${level}</td>
               <td class="d-none-mobile">${department}</td>
-              <td class="d-none-mobile">${email}</td>
+              <td class="d-none-mobile subjects">${email}</td>
               <td class="flex">
               <button type="button" class="edit-btn"><img src="../images/editBtn.png" class="edit"></button>
               <button type="button" class="delete-btn"><img src="../images/trash.png" class="delete"></button>
@@ -148,21 +179,6 @@ const displayStudentData = () => {
   }
 }
 displayStudentData()
-
-const showAlert = (text, action) => {
-  alert.textContent = text
-  mainAlert.textContent = text
-
-  alert.classList.add(`alert-${action}`)
-  mainAlert.classList.add(`alert-${action}`)
-
-  setTimeout(() => {
-    alert.textContent = ''
-    mainAlert.textContent = ''
-    alert.classList.remove(`alert-${action}`)
-    mainAlert.classList.remove(`alert-${action}`)
-  }, 1000)
-}
 
 // Set to default
 const setToDefault = () => {
@@ -215,11 +231,13 @@ studentBio.addEventListener('click', (e) => {
   }
   if (e.target.classList.contains('edit')) {
     let editEl = e.target.parentElement
+    console.log(editEl)
     editEl.addEventListener('click', () => {
       modalOverlay.classList.toggle('open-modal')
       editElement = editEl.parentElement.parentElement
       console.log(editElement.id)
       const tdCollection = [...editElement.children]
+      console.log(tdCollection)
       insertToInputValue(tdCollection)
       editFlag = true
       editId = editElement.id
@@ -232,23 +250,23 @@ studentBio.addEventListener('click', (e) => {
   }
 })
 const insertToInputValue = (tdColl) => {
-  inputEls[8].value = tdColl[0].innerHTML
-  inputEls[9].value = tdColl[1].innerHTML
+  inputEls[6].value = tdColl[0].innerHTML
+  inputEls[7].value = tdColl[1].innerHTML
   inputEls[0].value = tdColl[2].innerHTML
   inputEls[1].value = tdColl[3].innerHTML
   inputEls[2].value = tdColl[4].innerHTML
-  inputEls[3].value = tdColl[5].innerHTML
+  inputEls[5].value = tdColl[5].innerHTML
   inputEls[4].value = tdColl[6].innerHTML
-  inputEls[5].value = tdColl[7].innerHTML
+  inputEls[3].value = tdColl[7].innerHTML
 }
 
 const insertToTableRow = (tdColl) => {
-  tdColl[0].innerHTML = inputEls[8].value
-  tdColl[1].innerHTML = inputEls[9].value
+  tdColl[0].innerHTML = inputEls[6].value
+  tdColl[1].innerHTML = inputEls[7].value
   tdColl[2].innerHTML = inputEls[0].value
   tdColl[3].innerHTML = inputEls[1].value
   tdColl[4].innerHTML = inputEls[2].value
-  tdColl[5].innerHTML = inputEls[3].value
+  tdColl[5].innerHTML = inputEls[5].value
   tdColl[6].innerHTML = inputEls[4].value
-  tdColl[7].innerHTML = inputEls[5].value
+  tdColl[7].innerHTML = inputEls[3].value
 }

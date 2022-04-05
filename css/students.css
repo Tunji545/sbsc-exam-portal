@@ -46,6 +46,11 @@ a {
 .flex {
   display: flex;
 }
+.inline-flex {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+}
 .column {
   flex-direction: column;
 }
@@ -109,8 +114,14 @@ img {
 .width2 {
   width: 70%;
 }
+.width3 {
+  width: 16.66666666666667%;
+}
+.width4 {
+  width: 8.333333333333333%;
+}
 header {
-  background-color: var(--clr-black);
+  background-image: linear-gradient(to right, #082e7e, #04925e);
   color: var(--clr-white);
   box-shadow: var(--light-shadow);
   z-index: 1;
@@ -162,6 +173,9 @@ nav {
 .mr2 {
   margin-right: 2%;
 }
+.mt1 {
+  margin-top: 0.8rem;
+}
 .active {
   background-color: teal;
   padding-right: 0.5rem;
@@ -190,7 +204,7 @@ aside ul {
   height: 60vh;
 }
 .aside {
-  background-color: var(--clr-black);
+  background-image: linear-gradient(#082e7e, #04925e);
   color: var(--clr-white);
   position: fixed;
   top: 6.1rem;
@@ -219,7 +233,7 @@ aside ul {
   padding-right: 0.5rem;
 }
 .aside li a {
-  color: #888;
+  color: #fff;
 }
 .aside li a:first-child {
   /* padding-right: 0.8rem; */
@@ -254,6 +268,12 @@ main .hamburger-btn {
 .students-wrapper {
   background-color: #efeeff;
   height: 20rem;
+  position: relative;
+  top: 5rem;
+  z-index: 0;
+}
+.students-wrapper1 {
+  background-color: #efeeff;
   position: relative;
   top: 5rem;
   z-index: 0;
@@ -318,12 +338,12 @@ main a {
   background: var(--clr-white);
   border-radius: var(--radius);
   width: 50vw;
-  height: 68vh;
   text-align: center;
   position: absolute;
   top: 6rem;
   left: 50%;
   transform: translateX(-50%);
+  padding-bottom: 2rem;
 }
 .close-btn {
   position: absolute;
@@ -351,7 +371,7 @@ main a {
   position: relative;
   top: 1.5rem;
 }
-.modal-container input {
+.modal-container input:not(input[type='checkbox']) {
   width: 100%;
   margin-bottom: 2rem;
   border: 1px solid #888;
@@ -365,6 +385,12 @@ main a {
   margin-right: 2rem;
   font-size: 1.6rem;
 }
+.check-cont {
+  text-align: left;
+}
+.check-count .flex {
+  width: 15%;
+}
 .form-wrapper {
   margin-top: 0.5rem;
   position: relative;
@@ -374,15 +400,21 @@ main a {
   width: 48%;
   position: relative;
 }
+.deptCont {
+  padding-bottom: 4%;
+  text-align: left;
+  position: relative;
+  right: 1.6rem;
+}
 .modal-container .submit {
   width: 100%;
-  background-color: #74d6d1;
+  background-image: linear-gradient(to right, #082e7e, #04925e);
   border: none;
   height: 4rem;
   color: #fff;
   font-weight: 700;
   font-size: 2.4rem;
-  margin-top: 16rem;
+  margin-top: 5rem;
   border-radius: var(--radius);
 }
 .label {
@@ -394,17 +426,27 @@ main a {
 .student-records {
   width: 96%;
   transition: var(--transition);
-  visibility: hidden;
+  /* visibility: hidden; */
   background-color: #fff;
   box-shadow: var(--light-shadow);
   margin-left: 2%;
   margin-right: 2%;
+}
+.student-container {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  /* background-color: #efeeff; */
 }
 .student-records:hover {
   box-shadow: var(--dark-shadow);
 }
 .show-records {
   visibility: visible;
+}
+.subjects {
+  white-space: nowrap;
+  overflow-x: auto;
 }
 .students-table {
   color: #777;
@@ -431,7 +473,14 @@ td {
   text-align: left;
   width: 11.11%;
 }
-
+.table1 {
+  background-color: #fff;
+}
+.table1 td,
+.table1 th {
+  padding: 1%;
+  font-size: 1.4rem;
+}
 #close-icon {
   display: none;
 }
@@ -465,7 +514,7 @@ td {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   position: relative;
-  top: 2rem;
+  top: 0.5rem;
 }
 .alert,
 .mainAlert {
@@ -488,6 +537,68 @@ td {
 .mainAlert-success {
   color: #155724;
   background: #d4edda;
+}
+
+/* Result Page */
+.student-info {
+  width: 58%;
+}
+.examination {
+  width: 100%;
+}
+.grade-chart {
+  width: 23%;
+}
+.student-img {
+  width: 13%;
+  height: 15rem;
+  position: relative;
+  top: 3rem;
+}
+.col2 {
+  width: 50%;
+}
+.col2-1 {
+  width: 48%;
+}
+.col3 {
+  width: 33.33%;
+}
+.comment {
+  overflow-x: hidden;
+}
+/* .select-wrapper {
+  padding-bottom: 2rem;
+} */
+.input-wrapper .label-sel,
+.input-wrapper .select-elem {
+  display: block;
+}
+.input-wrapper .select-elem {
+  width: 100%;
+  margin-bottom: 2rem;
+  border: 1px solid #888;
+  outline: none;
+  height: 3rem;
+  border-radius: 0.8rem;
+  color: #888;
+  padding-left: 0.8rem;
+}
+.modal-container .label-sel {
+  margin-left: 8rem !important;
+}
+.input-search {
+  border-radius: 2.5rem;
+  border: 1px solid lightgray;
+  padding: 0.4rem 0;
+}
+.searh-btn {
+  margin-left: 1.6rem;
+  border-radius: 1.6rem;
+  border: 1px solid lightgray;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  color: #222;
 }
 /* SMALL SCREEN LAPTOP */
 @media screen and (max-width: 1024px) {
@@ -512,10 +623,10 @@ td {
   }
   .modal-container {
     width: 70vw;
-    height: 68vh;
+    /* height: 68vh; */
   }
   .modal-container .submit {
-    margin-top: 8rem;
+    margin-top: 2rem;
   }
 }
 
@@ -557,7 +668,7 @@ td {
   }
   .modal-container {
     width: 83vw;
-    height: 70vh;
+    /* height: 70vh; */
   }
   .modal-container input {
     margin-bottom: 0.8rem;
@@ -569,10 +680,29 @@ td {
     margin-top: 4rem;
     font-size: 2.1rem;
   }
+  .student-info {
+    width: 100%;
+  }
+  .grade-chart {
+    width: 50%;
+  }
+  .student-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* MOBILE VIEW */
 @media screen and (max-width: 600px) {
+  .student-info,
+  .grade-chart {
+    width: 100%;
+  }
+  .student-img {
+    order: -1;
+    margin-bottom: 4rem;
+    width: 30%;
+  }
   h1 {
     font-size: 1.4rem;
     font-weight: 700;
@@ -619,6 +749,9 @@ td {
   }
   .modal-container .submit {
     font-size: 1.8rem;
+  }
+  .col2-1 {
+    width: 100%;
   }
 }
 

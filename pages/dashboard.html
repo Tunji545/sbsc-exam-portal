@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
-    <script src="../js/dashboard.js" defer></script>
+    <script src="../js/dashboard.js" type="module" defer></script>
     <title>Result Management Admin Dashboard</title>
   </head>
   <body>
@@ -59,47 +59,49 @@
         <li class="pl1 active">
           <a href="#" class="active flex align-center">
             <img src="../images/dashboard.png" alt="" class="aside-img" />
-            <p class="capitalize">dashboard</p>
+            <p class="capitalize">Dashboard</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/user-management.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">user management</p>
           </a>
         </li>
         <li class="pl1">
           <a href="../pages/students.html" class="flex align-center">
             <img src="../images/students.png" alt="" class="aside-img" />
-            <p class="capitalize">students</p>
+            <p class="capitalize">Students</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/department.html" class="flex align-center"
             ><img src="../images/classes.png" alt="" class="aside-img" />
-            <p class="capitalize">classes</p>
+            <p class="capitalize">Department</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/scores.html" class="flex align-center"
             ><img src="../images/setting.png" alt="" class="aside-img" />
-            <p class="capitalize">exams</p>
+            <p class="capitalize">Scores</p>
           </a>
         </li>
         <li class="pl1">
-          <a href="#" class="flex align-center"
+          <a href="../pages/result.html" class="flex align-center"
             ><img src="../images/result.png" alt="" class="aside-img" />
-            <p class="capitalize">results</p>
-          </a>
-        </li>
-        <li class="pl1">
-          <a href="#" class="flex align-center"
-            ><img src="../images/course.png" alt="" class="aside-img" />
-            <p class="capitalize">courses</p>
+            <p class="capitalize">Results</p>
           </a>
         </li>
       </ul>
     </aside>
     <main>
-      <h3 class="student">You have 2 students</h3>
-      <div class="flex space-between align-center dash-hamb">
-        <h2 class="uppercase blk2 pl2 pt2">dashboard</h2>
-        <div class="hamburger hamburger-btn" id="hamburger">
-          <img src="../images/hamburger.png" alt="" />
+      <div class="pt3">
+        <h3 class="student mt4"></h3>
+        <div class="flex space-between align-center dash-hamb">
+          <h2 class="uppercase blk2 pl2 pt2">dashboard</h2>
+          <div class="hamburger hamburger-btn" id="hamburger">
+            <img src="../images/hamburger.png" alt="" />
+          </div>
         </div>
       </div>
       <hr class="hor-line mb1" />
@@ -116,8 +118,8 @@
       <div class="card-wrapper flex space-between align-center wrap">
         <div class="card uppercase flex align-center space-between">
           <div>
-            <h4 class="pl1 opacity">11</h4>
-            <h3 class="opacity">classes</h3>
+            <h4 class="pl1 opacity department">11</h4>
+            <h3 class="opacity">Department</h3>
           </div>
           <div class="card-img opacity">
             <img src="../images/users-group-bg.png" alt="" />
@@ -125,7 +127,7 @@
         </div>
         <div class="card uppercase flex align-center space-between">
           <div>
-            <h4 class="pl1 opacity">11</h4>
+            <h4 class="pl1 opacity stud">11</h4>
             <h3 class="opacity">students</h3>
           </div>
           <div class="card-img opacity">

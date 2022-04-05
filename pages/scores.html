@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Result Management System" />
+    <meta
+      name="description"
+      content="The Admin Dashboard for the Result Management System"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/students.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <title>Result Management Admin Dashboard</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="px fixed">
+      <nav class="flex space-between align-center">
+        <h1 class="capitalize">my college admin</h1>
+        <ul class="flex space-between align-center">
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/email.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center d-none-mobi">
+            <a href="#"><img src="../images/alarm.png" alt="" /></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+          <li class="flex space-between align-center mobi-lft">
+            <a href="#"
+              ><img src="../images/user.png" alt="" /><a
+                href="#"
+                class="admin wh"
+                >admin</a
+              ></a
+            ><a href="#"
+              ><img src="../images/arr-down.png" alt="" class="arr-down"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Aside -->
+    <aside class="aside d-none-lapi">
+      <ul class="pt1 flex column space-between">
+        <li id="close-icon" class="d-none close-icon">
+          <div class="close-btn1">
+            <img src="../images/close.png" alt="" />
+          </div>
+        </li>
+        <li class="pl1">
+          <a href="../pages/dashboard.html" class="flex align-center">
+            <img src="../images/dashboard.png" alt="" class="aside-img" />
+            <p class="capitalize">Dashboard</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/user-management.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">user management</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/students.html" class="flex align-center">
+            <img src="../images/students.png" alt="" class="aside-img" />
+            <p class="capitalize">Students</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/department.html" class="flex align-center"
+            ><img src="../images/classes.png" alt="" class="aside-img" />
+            <p class="capitalize">Department</p>
+          </a>
+        </li>
+        <li class="pl1 active">
+          <a href="../pages/scores.html" class="flex align-center"
+            ><img src="../images/setting.png" alt="" class="aside-img" />
+            <p class="capitalize">Scores</p>
+          </a>
+        </li>
+        <li class="pl1">
+          <a href="../pages/result.html" class="flex align-center"
+            ><img src="../images/result.png" alt="" class="aside-img" />
+            <p class="capitalize">Results</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- Main -->
+    <main>
+      <div class="students-wrapper pb1">
+        <p class="mainAlert"></p>
+        <h3 class="student"></h3>
+        <div class="flex space-between align-center dash-hamb">
+          <h2 class="uppercase blk2 pl2">Student Scores</h2>
+          <div class="hamburger hamburger-btn" id="hamburger">
+            <img src="../images/hamburger.png" alt="" />
+          </div>
+        </div>
+        <hr class="hor-line" />
+        <div class="flex pl3 space-between">
+          <div class="rect-white space-between pl2 align-center mx py2 pr">
+            <ul class="flex space-between">
+              <li>
+                <a href="dashboard.html" class="flex align-center">
+                  <img src="../images/dashboard.png" alt="" class="mr" />
+                  <p>dashboard</p>
+                </a>
+              </li>
+              <li class="stroke d-none-ext-mobi">/</li>
+              <li class="d-none-ext-mobi">
+                <a href="../pages/scores.html" class="flex align-center">
+                  <img src="../images/chart.png" alt="" class="mr" />
+                  <p>scores</p>
+                </a>
+              </li>
+            </ul>
+            <button class="modal-btn flex center">
+              <div class="btn-modal mr">
+                <img src="../images/plus.png" alt="" />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Students Score Records -->
+        <div class="student-records pb1">
+          <p class="students-table pl2 uppercase">Students Table</p>
+          <table class="table table1 blk2">
+            <thead>
+              <tr class="flex space-between wrap">
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Matric No.</th>
+                <th class="d-none-mobile">Stud Code</th>
+                <th class="d-none-mobile">Test(30)</th>
+                <th class="d-none-mobile">Exam(70)</th>
+                <th>Total(100)</th>
+                <th class="d-none-mobile">Grade</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="studentBio"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <!-- modal -->
+    <div class="modal-overlay">
+      <div class="modal-container">
+        <form class="form">
+          <p class="alert"></p>
+          <h2 class="capitalize form-header">Student Grade</h2>
+          <div class="form-wrapper">
+            <div class="flex space-between align-center">
+              <div class="input-wrapper">
+                <label class="label" for="firstName">First&nbsp;Name</label>
+                <input type="text" id="firstName" placeholder="FirstName:" />
+              </div>
+              <div class="input-wrapper">
+                <label class="label" for="lastName">Last&nbsp;Name</label>
+                <input type="text" id="lastName" placeholder="LastName" />
+              </div>
+            </div>
+            <div class="flex space-between align-center">
+              <div class="input-wrapper">
+                <label class="label" for="matricNo">Matric&nbsp;No</label>
+                <input type="text" id="matricNo" placeholder=" Matric No:" />
+              </div>
+              <div class="input-wrapper">
+                <label class="label" for="course_code">Stud&nbsp;Course</label>
+                <input type="text" id="course_code" placeholder="Course Code" />
+              </div>
+            </div>
+            <div class="flex space-between align-center">
+              <div class="input-wrapper">
+                <label class="label" for="test">Test(40)</label>
+                <input type="text" id="test" placeholder="Test Mark" />
+              </div>
+              <div class="input-wrapper">
+                <label class="label" for="exam">Exam(70)</label>
+                <input
+                  type="text"
+                  id="exam"
+                  onkeyup="total()"
+                  placeholder="Exam Mark"
+                />
+              </div>
+            </div>
+            <div class="flex space-between align-center">
+              <div class="input-wrapper">
+                <label class="label" for="total">Total(100)</label>
+                <input type="text" id="total" placeholder="Total Mark" />
+              </div>
+              <div class="input-wrapper">
+                <label class="label" for="grade">Grade</label>
+                <input type="text" id="grade" placeholder="Grade" />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="submit uppercase">register</button>
+        </form>
+        <button class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <script src="../js/scores.js" type="module"></script>
+  </body>
+</html>
