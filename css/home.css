@@ -38,7 +38,7 @@
 }
 .sec1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/sbsc-exam-portal/images/homeimg.jpg);
+    url(../images/homeimg.jpg);
   background-position: center;
   background-size: cover;
   /* background-image:linear-gradient(-45deg, #04925E, #082E7E);   */
@@ -194,6 +194,14 @@ textarea {
   border: 2px solid #04925e;
   color: #04925e;
 }
+.foot-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.foot-social > img {
+  width: 4%;
+}
 
 /* ******************* Footer Copyright ******************** */
 .footer-cpyr {
@@ -263,6 +271,9 @@ textarea {
 @media only screen and (max-width: 900px) {
   .navbar {
     line-height: 100px;
+  }
+  .foot-social > img {
+    width: 7%;
   }
   .content {
     padding: 16% 5%;

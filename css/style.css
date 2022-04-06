@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 
 body,
 input {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .container {
   position: relative;
@@ -70,17 +70,16 @@ form.sign-in-form {
   padding: 0 0.4rem;
   position: relative;
 }
-.input-field >img{
+.input-field > img {
   margin: 20%;
-
 }
-.input-field >input {
+.input-field > input {
   background: none;
   outline: none;
   border: none;
   line-height: 1;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   color: #333;
 }
 .input-field input::placeholder {
@@ -110,12 +109,12 @@ form.sign-in-form {
   transition: 0.3s;
 }
 .social-icon:hover {
-  color: #082E7E;
-  border-color: #082E7E;
+  color: #082e7e;
+  border-color: #082e7e;
 }
 .btn {
   width: 150px;
-  background-color: #082E7E;
+  background-color: #082e7e;
   border: none;
   outline: none;
   height: 49px;
@@ -127,12 +126,11 @@ form.sign-in-form {
   cursor: pointer;
   transition: 0.5s;
 }
-.btn2{
-  background-color: #04925E;
-
+.btn2 {
+  background-color: #04925e;
 }
 .btn:hover {
-  background-color: #082E7E;
+  background-color: #082e7e;
 }
 .panels-container {
   position: absolute;
@@ -144,14 +142,14 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 .container:before {
-  content: "";
+  content: '';
   position: absolute;
   height: 2000px;
   width: 2000px;
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #082E7E  0%, #04925E 100%);
+  background-image: linear-gradient(-45deg, #082e7e 0%, #04925e 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
